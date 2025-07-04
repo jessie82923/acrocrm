@@ -1,8 +1,25 @@
+html,
+body,
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: #f4f6fa;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .logo {
@@ -11,9 +28,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -22,6 +41,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -41,69 +61,209 @@
   color: #888;
 }
 
-/* App.css - 簡易美化 */
+/* App.css - 現代化美觀設計 */
+body {
+  background: linear-gradient(120deg, #e0e7ff 0%, #f0fdfa 100%);
+  min-height: 100vh;
+  font-family: 'Segoe UI', 'Noto Sans TC', Arial, sans-serif;
+}
+
 .container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px #0001;
+  min-height: 100vh;
+  height: 100vh;
+  width: 1100px;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  background: #f8fafc;
+  color: #222;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
 }
+
 .tabs {
-  margin-bottom: 1.5rem;
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #e0e7ff;
+  min-height: 36px;
+  align-items: flex-start;
+  margin-left: 0;
+  padding-left: 0;
+  padding-top: 0;
+  height: 40px;
+  flex: 0 0 auto;
 }
+
 .tabs button {
-  margin-right: 1rem;
-  padding: 0.5rem 1.5rem;
+  background: none;
   border: none;
-  border-bottom: 2px solid transparent;
-  background: #f3f3f3;
-  cursor: pointer;
+  padding: 6px 16px;
   font-size: 1rem;
-  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  color: #222;
+  transition: background 0.2s;
+  height: 32px;
+  line-height: 1.2;
 }
+
 .tabs button.active {
-  border-bottom: 2px solid #0078d4;
-  background: #e6f0fa;
-  color: #0078d4;
+  background: #e0e7ff;
+  color: #2563eb;
+  font-weight: bold;
 }
+
 .form {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
 }
-.form input, .form select {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+
+.form input,
+.form select {
+  padding: 0.6rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
   font-size: 1rem;
+  background: #f8fafc;
+  transition: border 0.2s;
 }
+
+.form input:focus,
+.form select:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
+}
+
 .form button {
-  padding: 0.5rem 1.2rem;
-  background: #0078d4;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(90deg, #2563eb 60%, #38bdf8 100%);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
   cursor: pointer;
+  box-shadow: 0 2px 8px #2563eb22;
+  transition: background 0.2s;
 }
+
 .form button[type="button"] {
-  background: #aaa;
+  background: #64748b;
 }
+
+/* 內容區塊固定高度，超出可滾動 */
+/* .container>div:not(:first-child) {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+} */
+
+/* 表格與表單美化 */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-bottom: 2rem;
+  margin-top: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+  overflow: hidden;
 }
-table th, table td {
-  border: 1px solid #eee;
-  padding: 0.5rem 1rem;
+
+th,
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e0e7ff;
   text-align: left;
 }
-table th {
-  background: #f6f6f6;
+
+th {
+  background: #e0e7ff;
+  color: #222;
 }
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+table,
+table th,
+table td {
+  color: #222;
+}
+
+table th,
+table td {
+  padding: 0.9rem 1.2rem;
+  text-align: left;
+}
+
+table th {
+  background: #e0e7ff;
+  color: #2563eb;
+  font-weight: 600;
+  border-bottom: 2px solid #cbd5e1;
+}
+
+table tr:not(:last-child) td {
+  border-bottom: 1px solid #e5e7eb;
+}
+
 table tr:nth-child(even) {
-  background: #fafbfc;
+  background: #f1f5f9;
+}
+
+table button {
+  margin-right: 0.5rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 5px;
+  border: none;
+  background: #e0e7ff;
+  color: #2563eb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+table button:hover {
+  background: #2563eb;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 1rem 0.5rem;
+  }
+
+  .form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  table th,
+  table td {
+    padding: 0.6rem 0.5rem;
+  }
+}
+
+h1 {
+  margin: 0;
+  padding: 24px 32px 10px 32px;
+}
+
+.container>*:not(.tabs):not(h1) {
+  flex: 1 1 0;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 0 32px 24px 32px;
+}
+
+/* 保證所有內容區塊、表格、標題等字體顏色為深色 */
+.container,
+.container * {
+  color: #222;
 }

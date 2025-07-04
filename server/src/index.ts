@@ -2,11 +2,11 @@ import 'reflect-metadata';
 import express from 'express';
 import cors from 'cors';
 import { DataSource } from 'typeorm';
-import { Customer } from './entities/Customer.js';
-import { Contact } from './entities/Contact.js';
-import { Product } from './entities/Product.js';
-import { License } from './entities/License.js';
-import { Equip } from './entities/Equip.js';
+import { Customer } from './entities/Customer';
+import { Contact } from './entities/Contact';
+import { Product } from './entities/Product';
+import { License } from './entities/License';
+import { Equip } from './entities/Equip';
 
 const app = express();
 app.use(cors());
@@ -17,8 +17,8 @@ export const AppDataSource = new DataSource({
   host: 'localhost',
   port: 5432,
   username: 'postgres', // 請依實際環境修改
-  password: 'postgres', // 請依實際環境修改
-  database: 'cfm',
+  password: 'acrored', // 請依實際環境修改
+  database: 'acrocrm',
   synchronize: true,
   logging: false,
   entities: [Customer, Contact, Product, License, Equip],
@@ -33,11 +33,11 @@ AppDataSource.initialize().then(() => {
 });
 
 // --- API routes ---
-import customerRouter from './routes/customer.js';
-import contactRouter from './routes/contact.js';
-import productRouter from './routes/product.js';
-import licenseRouter from './routes/license.js';
-import equipRouter from './routes/equip.js';
+import customerRouter from './routes/customer';
+import contactRouter from './routes/contact';
+import productRouter from './routes/product';
+import licenseRouter from './routes/license';
+import equipRouter from './routes/equip';
 
 app.use('/api/customers', customerRouter);
 app.use('/api/contacts', contactRouter);
